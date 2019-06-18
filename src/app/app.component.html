@@ -1,0 +1,37 @@
+<div style="text-align: center">
+<div class="centre" >
+  <br><br>
+  <div class="title">Movies</div>
+  <br><br>
+  <div>
+   <form>
+      <div >
+        Search  &nbsp;&nbsp;&nbsp;&nbsp;<input name="first" type="text" [(ngModel)]="s" (keyup)="searchFunction()" > 
+        &nbsp;&nbsp;&nbsp;&nbsp;<button (click)="searchFunction()" >Search</button>
+      </div>
+      <br><br>
+   </form>
+  </div> <br>
+  <div>
+    <table>
+      <thead>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<th>S No&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Title &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rating &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+        <th>Image &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of contentArray;let i = index">
+            &nbsp;
+          <td>{{i+1}} &nbsp;</td>
+          <td>{{item.title}} &nbsp;</td>
+          <td>{{contentArray[i].rating}} &nbsp;</td>
+          <td><img src="https://picsum.photos/80/80" alt="Image Not Found"></td>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+<router-outlet></router-outlet>
